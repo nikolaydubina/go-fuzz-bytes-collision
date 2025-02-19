@@ -24,8 +24,10 @@ func testCollisionTwoByteSlices(t *testing.T, a, b []byte) {
 }
 
 func TestCollisionTwoByteSlices(t *testing.T) {
-	a := []byte{1, 128, 163}
-	b := []byte{1, 128, 163, 1, 0, 255}
+	// same test data from fuzz tests output files
+	// fuzz tests keep adding files there, use any new file it creates
+	a := []byte("\x8bl")
+	b := []byte("\x8bl\xcef\x1ed\x05\x99\xbfu\xac\x1c")
 
 	testCollisionTwoByteSlices(t, a, b)
 }
