@@ -1,0 +1,1 @@
+# go-fuzz-bytes-collision
